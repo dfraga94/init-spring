@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'ec.edu.itsqmet'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.7.5'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //conectarse con base de datos
+	//implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.31'
+	implementation 'mysql:mysql-connector-java'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
