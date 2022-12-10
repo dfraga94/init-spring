@@ -13,4 +13,8 @@ public class CountryCatalogDTO {
 	private Integer id;
 	private Integer code;
 	private String name;
+
+	public String imprimirMensaje() {
+		return "mensaje imprestro";
+	}
 }
