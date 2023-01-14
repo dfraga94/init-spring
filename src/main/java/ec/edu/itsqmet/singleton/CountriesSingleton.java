@@ -20,7 +20,7 @@ public final class CountriesSingleton {
 		return countries;
 	}
 
-	public CountriesSingleton getInstance() {
+	public static CountriesSingleton getInstance() {
 		if (instance == null) {
 			instance = new CountriesSingleton();
 		}
